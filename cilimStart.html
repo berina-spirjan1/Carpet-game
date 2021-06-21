@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Slike/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ćilim</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="meni">
+        <div class="icon-bar">
+            <a href="#" class="nazad" onclick="location.reload();location.href='indeks.html'">NAZAD</a>
+            <a href="#" class="start" onclick="startTheGame()">START</a>
+        </div>
+    </div>
+    <audio src="Muzika/The Pink Panther Intro.mp3" controls autoplay class="zvuk-pozadine" controls loop></audio>
+    <!-- forma je modifikovana sa stranice w3schools-->
+    <form>
+        <div class="form-group">
+            <label for="name1">Molimo unesite ime prvog igrača: </label>
+            <input type="text" class="form-control" id="name1" placeholder="Igrač 1">
+        </div>
+        <div class="form-group">
+            <label for="name2">Molimo unesite ime drugog igrača:</label>
+            <input type="text" class="form-control" id="name2" placeholder="Igrač 2">
+        </div>
+    </form>
+    <!-- do ovog dijela-->
+    <script>
+        function startTheGame() {
+          //dio zaključno sa linijom 41 je spašen u browseru sve dok se ne promijeni ili dok ne obrišemo
+            //cache browsera
+          const name1 = document.getElementById("name1").value;
+          const name2 = document.getElementById("name2").value;
+          localStorage.setItem("name1", name1);
+          localStorage.setItem("name2", name2);
+          location.reload();
+          location.href = 'start.html';
+        }
+    </script>
+</div>
+
+
+
+</body>
+</html>

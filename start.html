@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Slike/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ćilim</title>
+
+
+</head>
+<body>
+<div class="containter">
+
+    <h4 class="dimenzija">Odaberite dimenziju ćilima</h4>
+    <div class="icon-bar1">
+        <a href="#" class="play" onclick="start(5)">DIMENZIJA 5 x 5</a>
+        <a href="#" class="play" onclick="start(7)">DIMENZIJA 7 x 7</a>
+        <a href="#" class="play" onclick="start(9)">DIMENZIJA 9 x 9</a>
+    </div>
+    <div class="icon-bar">
+        <a href="#" class="nazad" onclick="location.reload();location.href='cilimStart.html'">NAZAD</a>
+    </div>
+    <audio src="Muzika/It Had Better Be Tonight (Meglio stasera) (From the Mirisch-G & E Production The Pink Panther..mp3"
+           controls autoplay class="zvuk-pozadine" controls loop></audio>
+    <script>
+      //ovdje imamo pristup imenima igraca, ali ih jos uvijek ne koristimo
+      console.log(localStorage.getItem("name1"));
+      console.log(localStorage.getItem("name2"));
+      //pomocu ove funckije pokupimo dimenzije cilima koje su deklarisane na dugmicima u nasoj igrici i shodno tome se kreira
+      //određeni kanvas, koji se nakon toga otvara u istom prozoru, ali u drugom fajlu index.html
+      function start(dimension) {
+        localStorage.setItem("dimension", dimension);
+        location.reload();location.href='index.html'
+      }
+
+    </script>
+</div>
+</body>
